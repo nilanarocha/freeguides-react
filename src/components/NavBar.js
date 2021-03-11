@@ -7,7 +7,7 @@ import { HStack, Button, Box } from '@chakra-ui/react';
 
 function Navbar() {
   return (
-    <HStack my={2}>
+    <HStack my={2} mb="50px">
       <Box
         position="fixed"
         alignContent="center"

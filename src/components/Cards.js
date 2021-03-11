@@ -1,48 +1,106 @@
 import React from 'react';
-import { Button, Text, Badge } from '@chakra-ui/react';
+import { Button, Text, Badge, Stack, Grid, GridItem, Center } from '@chakra-ui/react';
 
 function Cards() {
   return (
-    <>
-      <Button
-        p={5}
-        w={{ lg: '17%', md: '40%', base: '100%', sm: '100%' }}
-        mx="auto"
-        h="100px"
-        rounded="10px"
-        overflow="hidden"
-        boxShadow="sm"
-        marginRight="30px"
-        marginTop={{ lg: '0', md: '15px', base: '15%', sm: '15px' }}
-        border="0.1em solid #F0F1F3"
-      >
-        <Text as="h2">Visa Platinum</Text>
-        <Badge
-          variant="outline"
-          colorScheme="blue"
-          color="white"
-          marginLeft="1px"
-          marginRight="15px"
-          marginTop="10px"
-          fontSize="0.75em"
-          position="absolute"
-          top="2"
-          right="2"
-          justifyContent="right"
-        ></Badge>
-        <Text
-          as="h4"
-          color="gray.600"
-          fontSize="sm"
-          fontWeight="md"
-          justifyContent="right"
-          right="4"
-          marginTop="20px"
-          marginRight="15px"
-          position="absolute"
-        ></Text>
-      </Button>
-    </>
+    <Grid templateColumns="repeat(2, 1fr)">
+      <GridItem colSpan={2} mt="10px">
+        <Center>
+          <Button
+            p={5}
+            w={{ lg: '25%', md: '40%', base: '100%', sm: '100%' }}
+            mx="auto"
+            mt="30px"
+            h="150px"
+            rounded="15px"
+            overflow="hidden"
+            boxShadow="md"
+            alignContent="center"
+            bg="#3770C7"
+            _hover={{ borderColor: '#3770C7' }}
+            marginTop={{ lg: '0', md: '15px', base: '15%', sm: '15px' }}
+            border="0.1em solid #F0F1F3"
+          >
+            <Stack spacing={1} mr="auto" mb="30px" left="3">
+              <Text as="h1" color="white" fontSize="30px">
+                Visa Platinum
+              </Text>
+              <Text as="h3" color="#669BDE" fontSize="15px">
+                Card ending with 4958
+              </Text>
+              <Text as="h3" color="#669BDE" fontSize="15px">
+                08/22
+              </Text>
+              <Badge
+                variant="solid"
+                colorScheme="#5EAEF9"
+                bg="#5EAEF9"
+                color="white"
+                marginLeft="1px"
+                marginRight="15px"
+                marginTop="10px"
+                fontSize="0.75em"
+                borderRadius="10px"
+                position="absolute"
+                bottom="5"
+                left="5"
+                justifyContent="right"
+              >
+                For Payment
+              </Badge>
+            </Stack>
+          </Button>
+        </Center>
+      </GridItem>
+
+      <GridItem colSpan={2}>
+        <Center>
+          <Button
+            p={5}
+            w={{ lg: '25%', md: '40%', base: '100%', sm: '100%' }}
+            mx="auto"
+            h="150px"
+            rounded="15px"
+            overflow="hidden"
+            boxShadow="md"
+            alignContent="center"
+            bg="#434343"
+            _hover={{ borderColor: '#434343' }}
+            marginTop={{ lg: '0', md: '15px', base: '15%', sm: '15px' }}
+            border="0.1em solid #F0F1F3"
+          >
+            <Stack spacing={1} mr="auto" mb="30px" left="2">
+              <Text as="h2" color="white" fontSize="30px">
+                Mastercard
+              </Text>
+              <Text as="h3" color="#696969" fontSize="15px">
+                Card ending with 4958
+              </Text>
+              <Text as="h3" color="#696969" fontSize="15px">
+                08/22
+              </Text>
+              <Badge
+                variant="solid"
+                colorScheme="#5EAEF9"
+                bg="#525252"
+                color="white"
+                ml="1px"
+                mar="15px"
+                mt="10px"
+                fontSize="0.75em"
+                borderRadius="10px"
+                position="absolute"
+                bottom="5"
+                left="5"
+                justifyContent="right"
+              >
+                For Payment
+              </Badge>
+            </Stack>
+          </Button>
+        </Center>
+      </GridItem>
+    </Grid>
   );
 }
 

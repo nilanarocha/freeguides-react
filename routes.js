@@ -1,13 +1,15 @@
 import React from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
-import CurrentPage from './pages/CurrentPage';
-import NewsPage from './pages/NewsPage';
+import Payment from './pages/Payment';
+import AddCard from './pages/AddCard';
+import { Box } from '@chakra-ui/react';
 
 const Routes = (
   <Router>
-    {/* Home */}
-    <Route exact path="/" component={CurrentPage} />
-    <Route exact path="/card" component={Card} />
+    <Box>
+      <Route exact path="/" component={Payment} />
+      <Route exact path="/AddCard" component={AddCard} />
+    </Box>
   </Router>
 );
 
