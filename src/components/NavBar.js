@@ -1,5 +1,9 @@
 import React from 'react';
 import { HStack, Button, Box } from '@chakra-ui/react';
+// import { faCircle } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+// const isActive = <FontAwesomeIcon icon={faCircle} />;
 
 function Navbar() {
   return (

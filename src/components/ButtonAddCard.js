@@ -7,7 +7,7 @@ function ButtonAddCard() {
       <Button
         size="md"
         height="50px"
-        w={{ lg: '10%', md: '30%', base: '80%', sm: '100%' }}
+        w={{ lg: '14%', md: '40%', base: '60%', sm: '100%' }}
         border="2px"
         borderRadius="25px"
         borderColor="#468EF7"
@@ -16,9 +16,8 @@ function ButtonAddCard() {
         position="fixed"
         alignItems="center"
         bottom="10%"
-        left="0"
-        right="0"
-        ml={30}
+        ml="25%"
+        mr="25%"
       >
         Add Card
       </Button>

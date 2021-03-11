@@ -6,30 +6,28 @@ import ButtonAddCard from './components/ButtonAddCard';
 import Footer from './components/Footer';
 import { Box, Container, Heading, Divider, Icon } from '@chakra-ui/react';
 import { ChakraProvider } from '@chakra-ui/react';
-
-import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const close = <FontAwesomeIcon icon={faTimesCircle} />;
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
-function App() {
+const closeIcon = <FontAwesomeIcon icon={faTimesCircle} />;
+
+function CurrentPage() {
   return (
     <ChakraProvider>
       <Container maxWidth="100%" maxHeight="100%">
         <Box>
           <Box>
             <MenuBar></MenuBar>
-            <Icon fontSize="md" fontWeight="lg" mr="auto" ml="60px" mt="30px" color="#E5E8ED">
-              {close}
+            <Icon mr="auto" ml="70px" fontSize="25px" mt="30px" color="#BBBBC0" size="lg">
+              {closeIcon}
             </Icon>
-            <Heading as="h3" size="md" mt="30px" color="#BBBBC0" textAlign="center">
+            <Heading as="h3" size="md" mt="5px" color="#BBBBC0" textAlign="center">
               FINANCES
             </Heading>
-            <Divider mt="60px" />
+            <Divider mt="50px" />
             <NavBar></NavBar>
             <Divider mt="60px" />
-            <Cards />
-            <ButtonAddCard />
             <Footer />
           </Box>
         </Box>
@@ -38,4 +36,4 @@ function App() {
   );
 }
 
-export default App;
+export default CurrentPag;
