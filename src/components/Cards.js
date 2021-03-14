@@ -22,9 +22,7 @@ function Cards() {
             border="0.1em solid #F0F1F3"
           >
             <Stack spacing={1} mr="auto" mb="30px" left="3">
-              <Text as="h1" color="white" fontSize="30px">
-                Visa Platinum
-              </Text>
+              <Text as="h1" color="white" fontSize="30px"></Text>
               <Text as="h3" color="#669BDE" fontSize="15px">
                 Card ending with 4958
               </Text>
@@ -70,9 +68,7 @@ function Cards() {
             border="0.1em solid #F0F1F3"
           >
             <Stack spacing={1} mr="auto" mb="30px" left="2">
-              <Text as="h2" color="white" fontSize="30px">
-                Mastercard
-              </Text>
+              <Text as="h2" color="white" fontSize="30px"></Text>
               <Text as="h3" color="#696969" fontSize="15px">
                 Card ending with 4958
               </Text>

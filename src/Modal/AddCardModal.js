@@ -15,11 +15,11 @@ import {
   AlertDescription,
 } from '@chakra-ui/react';
 
-const AddCardModal = ({ isOpen, onClose, setUsername, addUser, error }) => {
+const AddCardModal = ({ isOpen, onClose, error, setCardType, addCard }) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
-      <ModalContent as="form" onSubmit={(e) => addUser(e)}>
+      <ModalContent as="form" onSubmit={(e) => addCard(e)}>
         <ModalHeader color="blue.500">Add Card</ModalHeader>
         <ModalCloseButton />
         <ModalBody>
@@ -32,13 +32,6 @@ const AddCardModal = ({ isOpen, onClose, setUsername, addUser, error }) => {
             <FormLabel>Card Type</FormLabel>
             <Input type="text" onChange={(e) => setCardType(e.target.value)} />
           </FormControl>
-          <FormControl id="number">
-            <FormLabel>Add Card Ending</FormLabel>
-            <Input type="text" onChange={(e) => setCardType(e.target.value)} />
-          </FormControl>
-          setCardType={setCardType}
-          addCardEnding={addCardEnding}
-          addValidTo={addValidTo}
         </ModalBody>
         <ModalFooter>
           <Button mr={3} onClick={onClose}>

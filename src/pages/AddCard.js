@@ -8,25 +8,28 @@ import Icons from '../components/Icons';
 import { Box, Container, Heading, Icon } from '@chakra-ui/react';
 import { ChakraProvider } from '@chakra-ui/react';
 
-import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const close = <FontAwesomeIcon icon={faTimesCircle} />;
+const arrow = <FontAwesomeIcon icon={faArrowLeft} />;
 
 function AddCard() {
   return (
     <ChakraProvider>
-      <Box bg="#F0F0F0">
-        <Container maxWidth="100%" maxHeight="100%" bg="white" boxShadow="2px">
+      <Box>
+        <Container>
           <Box>
-            <Icon fontSize="md" fontWeight="lg" mr="auto" ml="60px" mt="30px" color="#E5E8ED">
-              {close}
-            </Icon>
-            <Heading as="h3" size="md" mb="10px" color="#BBBBC0" textAlign="center">
+            <Heading as="h3" size="md" mt="30px" color="#BBBBC0" textAlign="center">
               FINANCES
             </Heading>
+
+            <Icon fontSize="md" ml="30px" fontWeight="lg" color="#7BAEDE">
+              {arrow}
+            </Icon>
             <NavBar />
-            <Card />
+            <Box maxHeight="100%" bg="#FFFFFF" boxShadow="2px gray.500" borderRadius="10px">
+              <Card />
+            </Box>
             <Icons />
             <Footer />
           </Box>

@@ -11,10 +11,16 @@ const americanexpress = <FontAwesomeIcon icon={faCcAmex} />;
 
 function Icons() {
   return (
-    <Grid h="200px" templateRows="repeat(4, 1fr)">
-      <GridItem>{americanexpress}</GridItem>
-      <GridItem>{mastercard}</GridItem>
-      <GridItem>{visa}</GridItem>
+    <Grid padding="15px" ml="90px" spacing={2} templateColumns="repeat(3, 1fr)">
+      <GridItem fontSize="2rem" color="#818181">
+        {visa}
+      </GridItem>
+      <GridItem fontSize="2rem" color="#818181">
+        {mastercard}
+      </GridItem>
+      <GridItem fontSize="2rem" color="#818181">
+        {americanexpress}
+      </GridItem>
     </Grid>
   );
 }
