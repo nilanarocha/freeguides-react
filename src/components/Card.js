@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Container, Heading, Stack, Text, Button, Center } from '@chakra-ui/react';
 
 function Card() {
+  const { pathname } = useLocation();
   return (
     <Container bg="white">
       <Stack spacing={0.5} mr="auto" mb="30px" left="3">
@@ -22,7 +24,15 @@ function Card() {
         </Text>
       </Stack>
       <Center>
-        <Button>Add Card</Button>
+        <Button
+          as={Link}
+          to="/payment"
+          isActive={pathname.includes('payment')}
+          colorScheme="blue"
+          size="sm"
+        >
+          Add Card
+        </Button>
       </Center>
 
       <Stack spacing={1} mr="auto" mb="30px" left="3">

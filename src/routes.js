@@ -7,8 +7,8 @@ import { Box } from '@chakra-ui/react';
 const Routes = (
   <Router>
     <Box>
-      <Route exact path="/" component={Payment} />
-      <Route exact path="/AddCard" component={AddCard} />
+      <Route exact path="/" component={AddCard} />
+      <Route exact path="/payment" component={Payment} />
     </Box>
   </Router>
 );

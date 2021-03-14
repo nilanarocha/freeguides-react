@@ -1,39 +1,39 @@
 import React from 'react';
-import NavBar from './components/NavBar';
-import MenuBar from './components/MenuBar';
-import Cards from './components/Cards';
-import ButtonAddCard from './components/ButtonAddCard';
-import Footer from './components/Footer';
-import { Box, Container, Heading, Divider, Icon } from '@chakra-ui/react';
+import NavBar from '../components/NavBar';
+
+import Footer from '../components/Footer';
+
+import Card from '../components/Card';
+import Icons from '../components/Icons';
+import { Box, Container, Heading, Icon } from '@chakra-ui/react';
 import { ChakraProvider } from '@chakra-ui/react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const closeIcon = <FontAwesomeIcon icon={faTimesCircle} />;
+const close = <FontAwesomeIcon icon={faTimesCircle} />;
 
-function CurrentPage() {
+function AddCard() {
   return (
     <ChakraProvider>
-      <Container maxWidth="100%" maxHeight="100%">
-        <Box>
+      <Box bg="#F0F0F0">
+        <Container maxWidth="100%" maxHeight="100%" bg="white" boxShadow="2px">
           <Box>
-            <MenuBar></MenuBar>
-            <Icon mr="auto" ml="70px" fontSize="25px" mt="30px" color="#BBBBC0" size="lg">
-              {closeIcon}
+            <Icon fontSize="md" fontWeight="lg" mr="auto" ml="60px" mt="30px" color="#E5E8ED">
+              {close}
             </Icon>
-            <Heading as="h3" size="md" mt="5px" color="#BBBBC0" textAlign="center">
+            <Heading as="h3" size="md" mb="10px" color="#BBBBC0" textAlign="center">
               FINANCES
             </Heading>
-            <Divider mt="50px" />
-            <NavBar></NavBar>
-            <Divider mt="60px" />
+            <NavBar />
+            <Card />
+            <Icons />
             <Footer />
           </Box>
-        </Box>
-      </Container>
+        </Container>
+      </Box>
     </ChakraProvider>
   );
 }
 
-export default CurrentPag;
+export default AddCard;
