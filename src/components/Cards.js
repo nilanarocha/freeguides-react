@@ -22,7 +22,7 @@ function Cards() {
         >
           <Stack spacing={1} mr="auto" mb="30px" left="3">
             <Text as="h1" color="white" fontSize="30px">
-              Visa Platinun
+              Visa Platinum
             </Text>
             <Text as="h3" color="#669BDE" fontSize="15px">
               Card ending with 4958

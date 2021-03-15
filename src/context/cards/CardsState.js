@@ -5,7 +5,10 @@ import { ADD_CARDS } from '../type';
 
 const CardsState = ({ children }) => {
   const initialState = {
-    cards: [{ type: 'Visa Platinum' }, { type: 'Mastercard' }],
+    cards: [
+      { type: 'Visa Platinum', id: '1' },
+      { type: 'Mastercard', id: '2' },
+    ],
   };
   const [state, dispatch] = useReducer(CardsReducer, initialState);
 

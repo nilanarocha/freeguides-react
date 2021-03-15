@@ -8,13 +8,16 @@ import AddCardModal from '../modal/AddCardModal';
 import CardsContext from '../context/cards/CardsContext';
 
 import Footer from '../components/Footer';
-import { Box, Container, Heading, Icon, useDisclosure, HStack, Button } from '@chakra-ui/react';
+import {
+  Box,
+  Container,
+  Heading,
+  useDisclosure,
+  HStack,
+  Button,
+  CloseButton,
+} from '@chakra-ui/react';
 import { ChakraProvider } from '@chakra-ui/react';
-
-import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-const close = <FontAwesomeIcon icon={faTimesCircle} />;
 
 function Payment() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -50,9 +53,7 @@ function Payment() {
     <ChakraProvider>
       <Container maxWidth="100%" maxHeight="100%">
         <Box>
-          <Icon fontSize="md" fontWeight="lg" mr="auto" ml="60px" mt="30px" color="#E5E8ED">
-            {close}
-          </Icon>
+          <CloseButton size="sm" fontWeight="lg" mr="auto" ml="60px" mt="30px" />
           <Heading as="h3" size="md" mb="10px" color="#BBBBC0" textAlign="center">
             FINANCES
           </Heading>
