@@ -6,7 +6,7 @@ function Footer() {
     <Box
       backgroundColor="#000"
       position="fixed"
-      height="40px"
+      height="30px"
       bottom="0px"
       left="0px"
       right="0px"

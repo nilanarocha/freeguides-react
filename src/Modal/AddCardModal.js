@@ -15,11 +15,11 @@ import {
   AlertDescription,
 } from '@chakra-ui/react';
 
-const AddCardModal = ({ isOpen, onClose, error, setCardType, addCard }) => {
+const AddCardModal = ({ isOpen, onClose, error, setCardType, addNewCard }) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
-      <ModalContent as="form" onSubmit={(e) => addCard(e)}>
+      <ModalContent as="form" onSubmit={(e) => addNewCard(e)}>
         <ModalHeader color="blue.500">Add Card</ModalHeader>
         <ModalCloseButton />
         <ModalBody>

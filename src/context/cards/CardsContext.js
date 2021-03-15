@@ -2,6 +2,6 @@ import { createContext } from 'react';
 
 const CardsContext = createContext();
 
-CardsContext.displayName = 'cardsContext';
+CardsContext.displayName = 'CardsContext';
 
 export default CardsContext;

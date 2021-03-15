@@ -1,8 +1,8 @@
-import { ADD_CARD } from './types';
+import { ADD_CARDS } from '../type';
 
-export default (state, action) => {
+const CardsReducer = (state, action) => {
   switch (action.type) {
-    case ADD_CARD:
+    case ADD_CARDS:
       return {
         ...state,
         cards: [...state.cards, action.payload],
@@ -11,3 +11,5 @@ export default (state, action) => {
       return state;
   }
 };
+
+export default CardsReducer;
