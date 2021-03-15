@@ -38,7 +38,7 @@ function Payment() {
           type: cards,
           cardEnding: '4958',
           valiTo: '08/22',
-          id: cards,
+          id: cards.length + 1,
         });
         setCardType(null);
         setError(null);
