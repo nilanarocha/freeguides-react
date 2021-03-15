@@ -6,7 +6,7 @@ import { ADD_CARDS } from '../type';
 const CardsState = ({ children }) => {
   const initialState = {
     cards: [
-      { type: 'Visa Platinum', id: '1' },
+      { type: 'VisaPlatinum', id: '1' },
       { type: 'Mastercard', id: '2' },
     ],
   };

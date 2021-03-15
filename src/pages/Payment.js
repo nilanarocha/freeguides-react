@@ -24,7 +24,7 @@ function Payment() {
   const [error, setError] = useState(null);
   const [cardType, setCardType] = useState(null);
 
-  const { card, addCard } = useContext(CardsContext);
+  const { cards, addCard } = useContext(CardsContext);
 
   const addNewCard = (e) => {
     e.preventDefault();
@@ -35,9 +35,10 @@ function Payment() {
 
       if (cardType) {
         addCard({
-          type: cardType,
+          type: cards,
           cardEnding: '4958',
           valiTo: '08/22',
+          id: cards,
         });
         setCardType(null);
         setError(null);
@@ -83,8 +84,7 @@ function Payment() {
             </Box>
           </HStack>
           <GridCards>
-            <Cards />
-            {card && card.map((card) => <Cards key={card.id}>{card.type}</Cards>)}
+            {cards && cards.map((card) => <Cards key={card.id} type={card.type} />)}
           </GridCards>
           <ButtonAddCard onClick={onOpen}></ButtonAddCard>
           <Footer />
