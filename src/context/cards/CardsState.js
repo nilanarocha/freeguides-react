@@ -12,11 +12,12 @@ const CardsState = ({ children }) => {
   };
   const [state, dispatch] = useReducer(CardsReducer, initialState);
 
-  const setCards = (cards) => {
+  const setCards = (card) => {
     try {
+      console.log(card);
       dispatch({
         type: ADD_CARDS,
-        payload: cards,
+        payload: card,
       });
     } catch (error) {
       console.error(error);

@@ -31,19 +31,17 @@ function Payment() {
   };
 
   const addNewCard = (e, { cardType }) => {
+    console.log(cardType);
     e.preventDefault();
     try {
       if (!cardType) {
         throw new Error('Please enter a card Type.');
       }
 
-      setCards([
-        ...cards,
-        {
-          type: 'cardType',
-          id: cards.length + 1,
-        },
-      ]);
+      setCards({
+        type: cardType,
+        id: cards.length + 1,
+      });
       setError(null);
       onClose();
     } catch (error) {
