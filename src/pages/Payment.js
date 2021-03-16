@@ -4,7 +4,7 @@ import Cards from '../components/Cards';
 import GridCards from '../components/GridCards';
 import ButtonAddCard from '../components/ButtonAddCard';
 
-import AddCardModal from '../modal/AddCardModal';
+import AddCardModal from '../modals/AddCardModal';
 import CardsContext from '../context/cards/CardsContext';
 
 import Footer from '../components/Footer';
