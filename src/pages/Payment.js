@@ -34,25 +34,23 @@ function Payment() {
     e.preventDefault();
     try {
       if (!cardType) {
-        setError('Please enter a card Type.');
+        throw new Error('Please enter a card Type.');
       }
 
-      if (cardType) {
-        setCards([
-          ...cards,
-          {
-            type: cardType,
-            cardEnding: '4958',
-            validTo: '08/22',
-            id: cards.length + 1,
-          },
-        ]);
-        setError(null);
-        onClose();
-      }
+      setCards([
+        ...cards,
+        {
+          type: cardType,
+          cardEnding: '4958',
+          validTo: '08/22',
+          id: cards.length + 1,
+        },
+      ]);
+      setError(null);
+      onClose();
     } catch (error) {
-      console.error(error);
-      setError('Something went wrong');
+      console.error(error.message);
+      setError(error.message);
     }
   };
 
