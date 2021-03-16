@@ -11,9 +11,6 @@ import {
   Alert,
   AlertDescription,
   Select,
-  FormControl,
-  FormLabel,
-  Input,
 } from '@chakra-ui/react';
 
 const AddCardModal = ({ isOpen, onClose, error, addNewCard, type }) => {
@@ -30,10 +27,6 @@ const AddCardModal = ({ isOpen, onClose, error, addNewCard, type }) => {
               <AlertDescription color="red.500">{error}</AlertDescription>
             </Alert>
           )}
-          <FormControl id="type">
-            <FormLabel>Card Type</FormLabel>
-            <Input type="text" onChange={(e) => setCardType(e.target.value)} />
-          </FormControl>
           <Select placeholder="Cards" id="type" onChange={(e) => setCardType(e.target.value)}>
             <option value={type}>VisaPlatinum</option>
             <option value={type}>Mastercard</option>
