@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Modal,
   ModalOverlay,
@@ -15,11 +15,12 @@ import {
   AlertDescription,
 } from '@chakra-ui/react';
 
-const AddCardModal = ({ isOpen, onClose, error, setCardType, addNewCard }) => {
+const AddCardModal = ({ isOpen, onClose, error, addNewCard }) => {
+  const [cardType, setCardType] = useState(null);
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
-      <ModalContent as="form" onSubmit={(e) => addNewCard(e)}>
+      <ModalContent as="form" autoComplete="off" onSubmit={(e) => addNewCard(e, { cardType })}>
         <ModalHeader color="blue.500">Add Card</ModalHeader>
         <ModalCloseButton />
         <ModalBody>

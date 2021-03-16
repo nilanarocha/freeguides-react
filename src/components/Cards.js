@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Text, Badge, Center, Stack } from '@chakra-ui/react';
 
-function Cards({ type }) {
+function Cards({ type, id, onDelete }) {
   const bgColors = {
     VisaPlatinum: '#3770C7',
     Mastercard: '#434343',
@@ -19,6 +19,7 @@ function Cards({ type }) {
   return (
     <>
       <Center>
+        <Button onClick={(e) => onDelete(e, { id, type })}>Delete</Button>
         <Button
           p={5}
           w={{ lg: '25%', md: '40%', base: '100%', sm: '100%' }}

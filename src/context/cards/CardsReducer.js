@@ -1,4 +1,4 @@
-import { ADD_CARDS } from '../type';
+import { ADD_CARDS, DELETE_CARD } from '../type';
 
 const CardsReducer = (state, action) => {
   switch (action.type) {
@@ -6,6 +6,12 @@ const CardsReducer = (state, action) => {
       return {
         ...state,
         cards: [...state.cards, action.payload],
+      };
+
+    case DELETE_CARD:
+      return {
+        ...state,
+        cards: [...state.cards.filter((card) => card.id !== action.payload.id)],
       };
     default:
       return state;

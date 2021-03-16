@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react';
 import CardsReducer from './CardsReducer';
 import CardsContext from './CardsContext';
-import { ADD_CARDS } from '../type';
+import { ADD_CARDS, DELETE_CARD } from '../type';
 
 const CardsState = ({ children }) => {
   const initialState = {
@@ -12,10 +12,21 @@ const CardsState = ({ children }) => {
   };
   const [state, dispatch] = useReducer(CardsReducer, initialState);
 
-  const addCard = (card) => {
+  const setCards = (cards) => {
     try {
       dispatch({
         type: ADD_CARDS,
+        payload: cards,
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const deleteCard = (card) => {
+    try {
+      dispatch({
+        type: DELETE_CARD,
         payload: card,
       });
     } catch (error) {
@@ -27,7 +38,8 @@ const CardsState = ({ children }) => {
     <CardsContext.Provider
       value={{
         cards: state.cards,
-        addCard,
+        setCards,
+        deleteCard,
       }}
     >
       {children}

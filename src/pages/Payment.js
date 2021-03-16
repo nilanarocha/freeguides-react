@@ -22,25 +22,31 @@ import { ChakraProvider } from '@chakra-ui/react';
 function Payment() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [error, setError] = useState(null);
-  const [cardType, setCardType] = useState(null);
 
-  const { cards, addCard } = useContext(CardsContext);
+  const { cards, setCards, deleteCard } = useContext(CardsContext);
 
-  const addNewCard = (e) => {
+  const onDeleteCard = (e, card) => {
+    e.preventDefault();
+    deleteCard(card);
+  };
+
+  const addNewCard = (e, { cardType }) => {
     e.preventDefault();
     try {
-      if (cardType) {
+      if (!cardType) {
         setError('Please enter a card Type.');
       }
 
       if (cardType) {
-        addCard({
-          type: cards,
-          cardEnding: '4958',
-          valiTo: '08/22',
-          id: cards.length + 1,
-        });
-        setCardType(null);
+        setCards([
+          ...cards,
+          {
+            type: cardType,
+            cardEnding: '4958',
+            validTo: '08/22',
+            id: cards.length + 1,
+          },
+        ]);
         setError(null);
         onClose();
       }
@@ -84,7 +90,17 @@ function Payment() {
             </Box>
           </HStack>
           <GridCards>
-            {cards && cards.map((card) => <Cards key={card.id} type={card.type} />)}
+            {cards &&
+              cards.map((card) => {
+                return (
+                  <Cards
+                    key={`${card.type}-${card.id}`}
+                    id={card.id}
+                    type={card.type}
+                    onDelete={onDeleteCard}
+                  />
+                );
+              })}
           </GridCards>
           <ButtonAddCard onClick={onOpen}></ButtonAddCard>
           <Footer />
@@ -94,7 +110,6 @@ function Payment() {
               onClose();
               setError(null);
             }}
-            setCardType={setCardType}
             addNewCard={addNewCard}
             error={error}
           />
