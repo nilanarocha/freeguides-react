@@ -36,10 +36,10 @@ function Card() {
             Daniel Wasilewsky
           </Text>
           <Text as="h4" color="#676767" fontSize="14px">
-            Card ending in <Text fontWeight="bold">3815</Text>
+            Card ending in <strong>3815</strong>
           </Text>
         </GridItem>
-        <GridItem mt="90px" right="10" ml="60px" alignContent="right">
+        <GridItem mt="60px" mb="30px" right="10" ml="60px" alignContent="right">
           <Text as="h4" color="#676767" fontSize="14px">
             EXPIRES ON
           </Text>
@@ -75,7 +75,7 @@ function Card() {
               for guides
             </Text>
             <Text as="h4" color="#676767" fontSize="14px">
-              Acc. ending in <Text fontWeight="bold">0651</Text>
+              Acc. ending in <strong>0651</strong>
             </Text>
             <Text as="h4" color="#676767" fontSize="14px">
               Routing NUmber/BSB
@@ -88,13 +88,13 @@ function Card() {
       </Grid>
       <Center>
         <Button
-          borderRadius="25px"
+          borderRadius="10px"
           color="#fff"
           borderColor="#3770C7"
           backgroundColor="#448EF9"
           mb="15px"
         >
-          update account
+          update <br /> account
         </Button>
       </Center>
       <Stack>
