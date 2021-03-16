@@ -7,15 +7,16 @@ import {
   ModalHeader,
   ModalBody,
   ModalFooter,
-  FormControl,
-  FormLabel,
-  Input,
   Button,
   Alert,
   AlertDescription,
+  Select,
+  FormControl,
+  FormLabel,
+  Input,
 } from '@chakra-ui/react';
 
-const AddCardModal = ({ isOpen, onClose, error, addNewCard }) => {
+const AddCardModal = ({ isOpen, onClose, error, addNewCard, type }) => {
   const [cardType, setCardType] = useState(null);
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
@@ -29,10 +30,14 @@ const AddCardModal = ({ isOpen, onClose, error, addNewCard }) => {
               <AlertDescription color="red.500">{error}</AlertDescription>
             </Alert>
           )}
-          <FormControl id="cardType">
+          <FormControl id="type">
             <FormLabel>Card Type</FormLabel>
             <Input type="text" onChange={(e) => setCardType(e.target.value)} />
           </FormControl>
+          <Select placeholder="Cards" id="type" onChange={(e) => setCardType(e.target.value)}>
+            <option value={type}>VisaPlatinum</option>
+            <option value={type}>Mastercard</option>
+          </Select>
         </ModalBody>
         <ModalFooter>
           <Button mr={3} onClick={onClose}>

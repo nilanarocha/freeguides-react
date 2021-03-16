@@ -40,9 +40,7 @@ function Payment() {
       setCards([
         ...cards,
         {
-          type: cardType,
-          cardEnding: '4958',
-          validTo: '08/22',
+          type: 'cardType',
           id: cards.length + 1,
         },
       ]);

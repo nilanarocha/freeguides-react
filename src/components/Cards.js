@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Text, Badge, Center, Stack } from '@chakra-ui/react';
+import { Button, Text, Badge, Center, Stack, CloseButton } from '@chakra-ui/react';
 
 function Cards({ type, id, onDelete }) {
   const bgColors = {
@@ -19,13 +19,12 @@ function Cards({ type, id, onDelete }) {
   return (
     <>
       <Center>
-        <Button onClick={(e) => onDelete(e, { id, type })}>Delete</Button>
         <Button
           p={5}
           w={{ lg: '25%', md: '40%', base: '100%', sm: '100%' }}
           mx="auto"
-          mt="30px"
-          h="150px"
+          mt="20px"
+          h="130px"
           rounded="15px"
           overflow="hidden"
           boxShadow="md"
@@ -33,11 +32,10 @@ function Cards({ type, id, onDelete }) {
           bg={bgColors[type]}
           _hover={{ borderColor: bgColors[type] }}
           marginTop={{ lg: '0', md: '15px', base: '15%', sm: '15px' }}
-          border="0.1em solid #F0F1F3"
         >
           <Stack spacing={1} mr="auto" mb="30px" left="3">
             <Text as="h1" color="white" fontSize="30px">
-              {[type]}
+              {type}
             </Text>
             <Text as="h3" color={color[type]} fontSize="15px">
               Card ending with 4958
@@ -64,6 +62,12 @@ function Cards({ type, id, onDelete }) {
             </Badge>
           </Stack>
         </Button>
+        <CloseButton
+          onClick={(e) => onDelete(e, { id, type })}
+          size="sm"
+          fontWeight="md"
+          mb="0px"
+        />
       </Center>
     </>
   );
